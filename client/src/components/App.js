@@ -1,11 +1,28 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
+import { Dimmer, Loader } from 'semantic-ui-react';
 import { fetchUser } from '../actions';
-import Header from './Header';
-import Landing from './Landing';
 import Dashboard from './Dashboard';
-import SurveyNew from './surveys/SurveyNew';
+import LoginForm from './auth/LoginForm';
+import RegisterFrom from './auth/RegisterForm';
+
+
+const PrivateRoute = ({component: Component, auth, ...rest}) => {
+  return (
+    <Route {...rest} render={props =>  {
+      switch (auth) {
+        case null:
+          return null;
+        case false:
+          return <Redirect to="/login" />          
+        default:
+          return <Component {...props} />
+      }
+    }
+    } />
+  );
+}
 
 class App extends React.Component {
   
@@ -13,18 +30,30 @@ class App extends React.Component {
     this.props.fetchUser();    
   }
 
-  render() {
+  renderLoader() {
+    if (this.props.auth === null) {
+      return (
+        <Dimmer active inverted>
+          <Loader size='small'>Loading</Loader>
+        </Dimmer>
+      );
+    }
+  }
+
+  render() {  
     return (
-        <BrowserRouter>
-          <div className="container">
-            <Header />
-            <Route path="/" exact component={Landing} />
-            <Route path="/surveys" exact component={Dashboard} />
-            <Route path="/surveys/new" exact component={SurveyNew} />
-          </div>
-        </BrowserRouter>
+      <BrowserRouter>
+        {this.renderLoader()}
+        <Route path="/login" component={LoginForm} />
+        <Route path="/register" component={RegisterFrom} />
+        <PrivateRoute path="/" auth={this.props.auth} component={Dashboard} />
+      </BrowserRouter>
     );
   }
 }
 
-export default connect(null, { fetchUser })(App);
+function mapStateToProps({ auth }) {
+  return { auth };
+}
+
+export default connect(mapStateToProps, { fetchUser })(App);

@@ -1,6 +1,5 @@
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
-import { Link } from 'react-router-dom';
 import _ from 'lodash';
 import SurveyField from './SurveyField';
 import validateEmails from '../../utils/validateEmails';
@@ -15,17 +14,11 @@ class SurveyForm extends React.Component {
   }
   
   render() {
+    
     return (
-      <div>
-        <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
+      <div className="c-card u-p-medium u-text-small u-mb-small">
+        <form>
           {this.renderFields()}
-          <Link to="/surveys" className="red btn-flat white-text ">
-            Cancel
-          </Link>          
-          <button className="teal btn-flat right white-text" type="submit ">
-            Next
-            <i className="material-icons right">done</i>
-          </button>
         </form>
       </div>
     );

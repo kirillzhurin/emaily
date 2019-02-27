@@ -2,39 +2,36 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Payments from './Payments';
+import { Dropdown } from 'semantic-ui-react';
 
 class Header extends React.Component {
-  renderContent() {
-    switch (this.props.auth) {
-      case null:
-        return;
-      case false:
-        return (
-          <li>
-            <a href="/auth/google">Login With Google</a>
-          </li>
-        );
-      default:
-        return [
-          <li key="1"><Payments /></li>,
-          <li key="2" style={{ margin: '0 10px' }}>
-            Credits: {this.props.auth.credits}
-          </li>,
-          <li key="3"><a href="/api/logout">Logout</a></li>
-        ];
-    }
-  }
+
+  trigger = (
+    <span className="c-avatar c-avatar--xsmall has-dropdown dropdown-toggle">
+      <img className="c-avatar__img" src="/images/user.png" alt="User's Profile" />
+    </span>
+  );
 
   render() {
+    console.log('auth', this.props.auth);
     return (
-      <nav>
-        <div className="nav-wrapper">
-          <Link to={this.props.auth ? '/surveys' : '/'} className="left brand-logo">Emaily</Link>
-          <ul className="right">
-            {this.renderContent()}
-          </ul>
+      <header className="c-navbar">
+        <span className="c-navbar__brand u-mr-auto">
+          <img src="/images/logo-dark.svg" alt="Emaily logo" />
+        </span>
+        <Payments />
+        <div className="u-text-right u-mh-medium">
+          Credits: {this.props.auth.credits}
         </div>
-      </nav>
+        <div>
+          <Dropdown icon={null} trigger={this.trigger}  direction="left">
+            <Dropdown.Menu>
+              <Dropdown.Item disabled>Signed in as <strong>Bob Smith</strong></Dropdown.Item>
+              <Dropdown.Item as="a" href="/api/logout">Logout</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        </div>
+      </header>
     );
   }
 }

@@ -1,4 +1,5 @@
-import 'materialize-css/dist/css/materialize.min.css';
+import './semantic/dist/semantic.css';
+import './index.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';

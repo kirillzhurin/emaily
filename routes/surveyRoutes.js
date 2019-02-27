@@ -11,19 +11,26 @@ const Survey = mongoose.model('surveys');
 
 module.exports = app => {
   app.get('/api/surveys', requireLogin, async (req, res) => { 
-    const surveys = await Survey.find({ _user: req.user.id }).select({recipients: false});
+    //const surveys = await Survey.find({ _user: req.user.id }).select({recipients: false});
+
+    const surveys = await Survey.aggregate([
+      { $match: { '_user': new mongoose.Types.ObjectId(req.user.id) } },
+      { $addFields: { pending: { $subtract: [ { $cond: { if: { $isArray: "$recipients" }, then: { $size: "$recipients" }, else: 0} }, { $add: [ "$yes", "$no" ] } ] } } },
+      { $project: { 'recipients': false } },
+    ]); 
     res.send(surveys);
   });
 
   app.get('/api/surveys/:surveyId/:choice', (req, res) => {
-    res.send('Thanks fo voiting');
+    res.send('Thanks for voiting');
   });
   
   app.post('/api/surveys/webhooks', (req, res) => {
     const p = new Path('/api/surveys/:surveyId/:choice');
     
     const events = _.chain(req.body)
-      .map(({ email, url}) => {
+      .map(({ email, url }) => {
+        console.log('=======', url);
         const pathname = new URL(url).pathname;
         const match = p.test(pathname);
         if (match) {

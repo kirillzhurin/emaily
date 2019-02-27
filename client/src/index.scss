@@ -1,0 +1,184 @@
+//
+// TOOLS
+//
+@import "scss/tools/tools.rem";
+@import "scss/tools/tools.clearfix";
+@import "scss/tools/tools.linear-gradient";
+@import "scss/tools/tools.respond-to";
+
+
+//
+// SETTINGS 
+// 
+
+// Global Settings
+@import "scss/settings/settings.global";
+
+// UI-Kit Settings
+// @import "scss/settings/settings.alerts";
+@import "scss/settings/settings.avatars";
+// @import "scss/settings/settings.badges";
+@import "scss/settings/settings.breadcrumb";
+@import "scss/settings/settings.buttons";
+// @import "scss/settings/settings.calendar";
+@import "scss/settings/settings.card";
+// @import "scss/settings/settings.choice";
+// @import "scss/settings/settings.close";
+// @import "scss/settings/settings.divider";
+@import "scss/settings/settings.dropdown";
+@import "scss/settings/settings.field";
+@import "scss/settings/settings.inputs";
+// @import "scss/settings/settings.modals";
+@import "scss/settings/settings.nav";
+@import "scss/settings/settings.navbar";
+// @import "scss/settings/settings.notifications";
+@import "scss/settings/settings.pagination";
+// @import "scss/settings/settings.popovers";
+// @import "scss/settings/settings.progress";
+// @import "scss/settings/settings.range";
+// @import "scss/settings/settings.scrollbar";
+// @import "scss/settings/settings.select";
+// @import "scss/settings/settings.switches";
+@import "scss/settings/settings.tables";
+@import "scss/settings/settings.tabs";
+// @import "scss/settings/settings.toggle";
+@import "scss/settings/settings.toolbar";
+// @import "scss/settings/settings.tooltips";
+
+// @import "scss/tools/tools.scrollbar";
+
+
+//
+// THEMES
+//
+//@import "scss/themes/themes.dark"; // <== uncomment to use the dark theme
+
+
+//
+// BASE
+//
+@import "scss/base/base.global";
+@import "scss/base/base.typography";
+
+
+//
+// VENDORS
+//
+@import "scss/vendor/bootstrap-grid";
+// @import "scss/vendor/fontawesome";
+// @import "scss/vendor/fullcalendar";
+// @import "scss/vendor/fullcalendar-custom"; // override `fullcalendar` default styles
+// @import "scss/vendor/dragula";
+// @import "scss/vendor/select2";
+// @import "scss/vendor/select2-custom"; // override `select2` default styles
+// @import "scss/vendor/dropzone";
+// @import "scss/vendor/dropzone-custom"; // override `dropzone` default styles
+// @import "scss/vendor/datatables-custom"; // override `datatables` default styles
+// @import "scss/vendor/datepicker";
+// @import "scss/vendor/datepicker-custom"; // override `datepicker` default styles
+// @import "scss/vendor/jqvmap";
+// @import "scss/vendor/jqvmap-custom"; // override `jqvmap` default styles
+
+//
+// OBJECTS
+//
+@import "scss/objects/objects.page";
+@import "scss/objects/objects.media";
+@import "scss/objects/objects.line";
+@import "scss/objects/objects.ratio";
+
+
+//
+// COMPONENTS
+//
+
+// UI-Kit Components
+// @import "scss/components/components.alerts";
+@import "scss/components/components.avatars";
+// @import "scss/components/components.badges";
+// @import "scss/components/components.breadcrumb";
+@import "scss/components/components.button-group";
+@import "scss/components/components.buttons";
+@import "scss/components/components.card";
+// @import "scss/components/components.choice";
+// @import "scss/components/components.close";
+@import "scss/components/components.dropdown";
+@import "scss/components/components.field";
+// @import "scss/components/components.icon";
+@import "scss/components/components.inputs";
+// @import "scss/components/components.modal";
+@import "scss/components/components.nav";
+@import "scss/components/components.navbar";
+// @import "scss/components/components.notifications";
+@import "scss/components/components.pagination";
+// @import "scss/components/components.popover";
+// @import "scss/components/components.progress";
+// @import "scss/components/components.ranges";
+// @import "scss/components/components.switch";
+// @import "scss/components/components.switch";
+@import "scss/components/components.tables";
+// @import "scss/components/components.tabs";
+// @import "scss/components/components.toggle";
+@import "scss/components/components.toolbar";
+// @import "scss/components/components.tooltips";
+
+// Dashboard/Admin-Related Components
+// @import "scss/components/components.profile-card";
+// @import "scss/components/components.event";
+// @import "scss/components/components.sidebar";
+@import "scss/components/components.projects";
+// @import "scss/components/components.post";
+// @import "scss/components/components.stream";
+// @import "scss/components/components.gallery-card";
+// @import "scss/components/components.state";
+// @import "scss/components/components.todo";
+// @import "scss/components/components.messanger";
+// @import "scss/components/components.credit-card";
+// @import "scss/components/components.search-result";
+// @import "scss/components/components.search-form";
+// @import "scss/components/components.graph-card";
+// @import "scss/components/components.divider";
+// @import "scss/components/components.progress-card";
+// @import "scss/components/components.panel";
+// @import "scss/components/components.state-card";
+// @import "scss/components/components.summary";
+// @import "scss/components/components.chart";
+// @import "scss/components/components.project-card";
+// @import "scss/components/components.menu";
+// @import "scss/components/components.boards";
+// @import "scss/components/components.plans";
+// @import "scss/components/components.fileitem";
+// @import "scss/components/components.overview-card";
+// @import "scss/components/components.invoice";
+// @import "scss/components/components.feed";
+// @import "scss/components/components.rating";
+// @import "scss/components/components.map";
+// @import "scss/components/components.candidate";
+// @import "scss/components/components.stage";
+// @import "scss/components/components.counter-nav";
+// @import "scss/components/components.chat-dialogue";
+// @import "scss/components/components.login-horizontal";
+
+// @import "scss/components/components.sidebar-minimized";
+
+
+//
+// UTILITIES
+//
+@import "scss/utilities/utilities.typography";
+@import "scss/utilities/utilities.floats";
+@import "scss/utilities/utilities.clearfix";
+@import "scss/utilities/utilities.spacing";
+@import "scss/utilities/utilities.colors";
+@import "scss/utilities/utilities.display";
+@import "scss/utilities/utilities.borders";
+@import "scss/utilities/utilities.flex";
+@import "scss/utilities/utilities.responsive";
+@import "scss/utilities/utilities.opacity";
+@import "scss/utilities/utilities.sizes";
+@import "scss/utilities/utilities.overflow";
+@import "scss/utilities/utilities.bootstrap";
+
+#root {
+  height: 100%;
+}

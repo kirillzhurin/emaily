@@ -1,4 +1,4 @@
-import './auth.scss';
+import './auth.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
 

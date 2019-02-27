@@ -19,7 +19,7 @@
 		flex-flow: row nowrap;
 
 		> .c-input {
-			flex-basis: calc(100% - $field-addon-width); /* [1] */
+			flex-basis: calc(100% - #{$field-addon-width}); /* [1] */
 		}
 	}
 

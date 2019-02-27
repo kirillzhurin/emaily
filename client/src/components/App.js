@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 import { Dimmer, Loader } from 'semantic-ui-react';
 import { fetchUser } from '../actions';
 import Dashboard from './Dashboard';

@@ -15,7 +15,7 @@
 @import "scss/settings/settings.global";
 
 // UI-Kit Settings
-// @import "scss/settings/settings.alerts";
+@import "scss/settings/settings.alerts";
 @import "scss/settings/settings.avatars";
 // @import "scss/settings/settings.badges";
 @import "scss/settings/settings.breadcrumb";
@@ -93,7 +93,7 @@
 //
 
 // UI-Kit Components
-// @import "scss/components/components.alerts";
+@import "scss/components/components.alerts";
 @import "scss/components/components.avatars";
 // @import "scss/components/components.badges";
 // @import "scss/components/components.breadcrumb";

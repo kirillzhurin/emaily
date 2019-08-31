@@ -70,7 +70,7 @@ module.exports = {
     //'form',
     //'grid',
     'menu',
-    //'message',
+    'message',
     //'table',
 
     // views

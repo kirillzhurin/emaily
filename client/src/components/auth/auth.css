@@ -290,6 +290,14 @@
   margin-bottom: 14px;
 }
 
+.form-content .field .c-field__message {
+  margin-bottom: 10px;
+}
+
+.form-content .field input {
+  margin-bottom: 0px;
+}
+
 .form-content input:hover,
 .form-content input:focus,
 .form-content .dropdown-toggle.btn-default:hover,

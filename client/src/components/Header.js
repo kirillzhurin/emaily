@@ -12,7 +12,7 @@ class Header extends React.Component {
   );
 
   render() {
-    console.log('auth', this.props.auth);
+    const { auth: { firstName, lastName } } = this.props;
     return (
       <header className="c-navbar">
         <span className="c-navbar__brand u-mr-auto">
@@ -25,7 +25,7 @@ class Header extends React.Component {
         <div>
           <Dropdown icon={null} trigger={this.trigger}  direction="left">
             <Dropdown.Menu>
-              <Dropdown.Item disabled>Signed in as <strong>Bob Smith</strong></Dropdown.Item>
+              <Dropdown.Item disabled>Signed in as <strong>{firstName} {lastName}</strong></Dropdown.Item>
               <Dropdown.Item as="a" href="/api/logout">Logout</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Dimmer, Loader } from 'semantic-ui-react';
 import { fetchSurveys } from '../../actions';
 import PieChart from './PieChart';
 class SurveyList extends React.Component {
@@ -37,7 +36,7 @@ class SurveyList extends React.Component {
   }
 
   renderContent() {
-    const { surveys } = this.props;
+    const { surveys, auth:{firstName, lastName}} = this.props;
   
     if (surveys.length > 0) {
       return (
@@ -67,7 +66,7 @@ class SurveyList extends React.Component {
 
     return (
       <div className="u-mv-large u-text-center">
-        <h2 className="u-mb-xsmall">Hi Jessica! Welcome back to the Dashboard.</h2>
+        <h2 className="u-mb-xsmall">Hi {firstName} {lastName}! Welcome back to the Dashboard.</h2>
         <p className="u-text-mute u-h6">You don't have any surveys. You can top up credits and after to create your first survey. <Link to="surveys/new">Create a survey</Link></p>
       </div>
     );
@@ -94,8 +93,8 @@ class SurveyList extends React.Component {
   }
 };
 
-function mapStateToProps({ surveys }) {
-  return { surveys };
+function mapStateToProps({ surveys, auth }) {
+  return { surveys, auth };
 }
 
 export default connect(mapStateToProps, { fetchSurveys })(SurveyList);

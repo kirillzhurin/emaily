@@ -29,7 +29,7 @@ const Auth = ({ activePage, children }) => {
               </div>
               {children}
               <div className="other-links">
-                <span>Or {activePage} with</span><a href="/auth/facebook">Facebook</a><a href="/auth/google">Google</a><a href="/auth/twitter">Twitter</a>
+                <span>Or {activePage} with</span><a href="/auth/facebook">Facebook</a><a href="/auth/google">Google</a>
               </div>
             </div>
           </div>

@@ -11,8 +11,6 @@ const Survey = mongoose.model('surveys');
 
 module.exports = app => {
   app.get('/api/surveys', requireLogin, async (req, res) => { 
-    //const surveys = await Survey.find({ _user: req.user.id }).select({recipients: false});
-
     const surveys = await Survey.aggregate([
       { $match: { '_user': new mongoose.Types.ObjectId(req.user.id) } },
       { $addFields: { pending: { $subtract: [ { $cond: { if: { $isArray: "$recipients" }, then: { $size: "$recipients" }, else: 0} }, { $add: [ "$yes", "$no" ] } ] } } },

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import { Dimmer, Loader } from 'semantic-ui-react';
 import { fetchUser } from '../actions';
 import Dashboard from './Dashboard';
@@ -43,10 +43,12 @@ class App extends React.Component {
   render() {  
     return (
       <BrowserRouter>
-        {this.renderLoader()}
-        <Route path="/login" component={LoginForm} />
-        <Route path="/register" component={RegisterFrom} />
-        <PrivateRoute path="/" auth={this.props.auth} component={Dashboard} />
+          {this.renderLoader()}
+          <Switch>
+            <Route path="/login" component={LoginForm} />
+            <Route path="/register" component={RegisterFrom} />
+            <PrivateRoute path="/" auth={this.props.auth} component={Dashboard} />
+          </Switch>
       </BrowserRouter>
     );
   }

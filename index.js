@@ -4,7 +4,8 @@ const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session');
 const keys = require('./config/keys');
 const passport = require('passport');
-const path = require('path')
+const path = require('path');
+const nodemailer = require('nodemailer');
 require('./models/User');
 require('./models/Survey');
 require('./services/passport');
